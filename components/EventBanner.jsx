@@ -31,7 +31,7 @@ export default function EventBanner() {
             <div className="flex-1 mb-6 md:mb-0 text-center md:text-left">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">Boot Camp 2026</h2>
                 <p className="mb-3 text-sm sm:text-base md:text-lg">
-                    Register before June to get an exclusive <span className="font-semibold underline">20% discount</span>!
+                    Register before June to get an exclusive <span className="font-semibold underline">50% discount</span>!
                 </p>
                 <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-4 text-center">
                     <div>
