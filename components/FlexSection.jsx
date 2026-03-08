@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { FaUsers } from "react-icons/fa"
-import ictImg from "../public/assets/ictImg.png"
+import ictImg from "../public/assets/ictImg.jpeg"
 import { motion } from "framer-motion"
 
 export default function FlexSection() {

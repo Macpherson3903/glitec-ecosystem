@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
-import GroupPic from "../public/assets/groupPic.png"
+import GroupPic from "../public/assets/groupPic.jpeg"
 
 export default function WhoWe() {
   return (

@@ -8,8 +8,7 @@ export default function Navbar({ closeMenu }) {
     { href: "/course", label: "Courses" },
     { href: "/about", label: "About" },
     { href: "/autocare", label: "AutoCare" },
-    { href: "/scholarship", label: "Scholarship" },
-    { href: "/contact", label: "Contact" },
+    { href: "/scholarship", label: "Scholarship" }
   ]
 
   return (

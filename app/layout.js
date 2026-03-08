@@ -25,7 +25,7 @@ export const metadata = {
     title: "Glitec Advanced School of Technology",
     description:
       "Hands-on, industry-focused programs in technology, auto mechanics, business, and more. Learn online or in-person.",
-    url: "https://www.glitec.com",
+    url: "https://www.glitecast.com",
     siteName: "Glitec Advanced School of Technology",
     images: [
       {
