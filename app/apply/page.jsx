@@ -5,6 +5,7 @@ import { courses as courseData } from "@/data/courses";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { toast, Toaster } from "react-hot-toast";
+import WhatsAppFloating from "@/components/WhatsAppFloating"
 
 export default function ApplyPage() {
   const [form, setForm] = useState({
@@ -471,7 +472,7 @@ export default function ApplyPage() {
           </button>
         </form>
       </section>
-
+<WhatsAppFloating />
       <Footer />
     </>
   );
