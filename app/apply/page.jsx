@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { toast, Toaster } from "react-hot-toast";
 import WhatsAppFloating from "@/components/WhatsAppFloating"
+import ApplyDetails from "./components/ApplyDetails"
 
 export default function ApplyPage() {
   const [form, setForm] = useState({
@@ -56,7 +57,8 @@ export default function ApplyPage() {
 
   const handleFileChange = (e) => {
     const f = e.target.files[0];
-    if (f && f.size <= 500000) setFile(f);
+    if (!f) return;
+    if (f.size <= 500000) setFile(f);
     else {
       setFile(null);
       toast.error("File must be less than 500kb");
@@ -115,61 +117,14 @@ export default function ApplyPage() {
 
   return (
     <>
-      <Toaster position="top-right" />
       <Header />
-
+      <Toaster position="fixed top-right" />
+<ApplyDetails />
       <section className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-bold mb-6">Apply for Admission</h1>
 
-        <div className="bg-gray-50 p-6 rounded mb-8 text-gray-800 space-y-4">
-          <p>
-            Please fill out the form below if you are ready to begin your online
-            Admissions Application. The application takes about 10 minutes to
-            complete.
-          </p>
-          <p>
-            If you have questions or wish to speak with an Admissions
-            Representative prior to completing your application, please call us at{" "}
-            <a
-              href="tel:+2348167375717"
-              className="text-blue-600 underline"
-            >
-              +234-816-737-5717
-            </a>{" "}
-            or email us at{" "}
-            <a
-              href="mailto:admissions@glitecast.com"
-              className="text-blue-600 underline"
-            >
-              admissions@glitecast.com
-            </a>
-          </p>
-          <h2 className="font-semibold text-lg mt-2">
-            Upcoming Term Dates & Enrollment Deadlines
-          </h2>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>
-              <strong>Winter 2026 (January – April)</strong>
-              <br />
-              Start Date: January 12, 2026 <br />
-              Enrollment Deadline: December 30, 2025
-            </li>
-            <li>
-              <strong>Spring 2026 (May – August)</strong>
-              <br />
-              Start Date: May 11, 2026 <br />
-              Enrollment Deadline: April 30, 2026
-            </li>
-            <li>
-              <strong>Fall 2026 (September – December)</strong>
-              <br />
-              Start Date: September 7, 2026 <br />
-              Enrollment Deadline: August 31, 2026
-            </li>
-          </ul>
-        </div>
-
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+
           <select
             name="course"
             value={form.course}
@@ -177,7 +132,7 @@ export default function ApplyPage() {
             required
             className="border p-3 rounded"
           >
-            <option value="">Select Course</option>
+            <option value="">Select Course *</option>
             {courses.map((c) => (
               <option key={c.id} value={c.title}>
                 {c.title}
@@ -192,7 +147,7 @@ export default function ApplyPage() {
             required
             className="border p-3 rounded"
           >
-            <option value="">Select Start Month</option>
+            <option value="">Select Start Month *</option>
             {startMonths.map((m) => (
               <option key={m} value={m}>
                 {m}
@@ -206,7 +161,7 @@ export default function ApplyPage() {
               name="firstName"
               value={form.firstName}
               onChange={handleChange}
-              placeholder="First Name"
+              placeholder="First Name *"
               required
               className="border p-3 rounded flex-1"
             />
@@ -215,7 +170,7 @@ export default function ApplyPage() {
               name="lastName"
               value={form.lastName}
               onChange={handleChange}
-              placeholder="Last Name"
+              placeholder="Last Name *"
               required
               className="border p-3 rounded flex-1"
             />
@@ -227,7 +182,7 @@ export default function ApplyPage() {
               name="birthYear"
               value={form.birthYear}
               onChange={handleChange}
-              placeholder="Year of Birth"
+              placeholder="Year of Birth *"
               required
               className="border p-3 rounded flex-1"
             />
@@ -238,7 +193,7 @@ export default function ApplyPage() {
               required
               className="border p-3 rounded flex-1"
             >
-              <option value="">Select Gender</option>
+              <option value="">Select Gender *</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
               <option value="Other">Other</option>
@@ -250,7 +205,7 @@ export default function ApplyPage() {
             name="address"
             value={form.address}
             onChange={handleChange}
-            placeholder="Address"
+            placeholder="Address *"
             required
             className="border p-3 rounded"
           />
@@ -261,7 +216,7 @@ export default function ApplyPage() {
               name="state"
               value={form.state}
               onChange={handleChange}
-              placeholder="State"
+              placeholder="State *"
               required
               className="border p-3 rounded flex-1"
             />
@@ -270,7 +225,7 @@ export default function ApplyPage() {
               name="country"
               value={form.country}
               onChange={handleChange}
-              placeholder="Country"
+              placeholder="Country *"
               required
               className="border p-3 rounded flex-1"
             />
@@ -282,7 +237,7 @@ export default function ApplyPage() {
               name="phone"
               value={form.phone}
               onChange={handleChange}
-              placeholder="Primary Phone"
+              placeholder="Primary Phone *"
               required
               className="border p-3 rounded flex-1"
             />
@@ -291,76 +246,26 @@ export default function ApplyPage() {
               name="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="Primary Email"
+              placeholder="Primary Email *"
               required
               className="border p-3 rounded flex-1"
             />
           </div>
 
-          <div className="flex flex-col gap-2">
-            <span>Did you graduate from High/Secondary School?</span>
-            <div className="flex items-center gap-4">
-              <label className="flex items-center gap-1">
-                <input
-                  type="radio"
-                  name="graduatedHS"
-                  value="Yes"
-                  checked={form.graduatedHS === "Yes"}
-                  onChange={handleChange}
-                  className="accent-blue-600"
-                />
-                Yes
-              </label>
-              <label className="flex items-center gap-1">
-                <input
-                  type="radio"
-                  name="graduatedHS"
-                  value="No"
-                  checked={form.graduatedHS === "No"}
-                  onChange={handleChange}
-                  className="accent-blue-600"
-                />
-                No
-              </label>
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <span>Are you currently employed?</span>
-            <div className="flex items-center gap-4">
-              <label className="flex items-center gap-1">
-                <input
-                  type="radio"
-                  name="employed"
-                  value="Yes"
-                  checked={form.employed === "Yes"}
-                  onChange={handleChange}
-                  className="accent-blue-600"
-                />
-                Yes
-              </label>
-              <label className="flex items-center gap-1">
-                <input
-                  type="radio"
-                  name="employed"
-                  value="No"
-                  checked={form.employed === "No"}
-                  onChange={handleChange}
-                  className="accent-blue-600"
-                />
-                No
-              </label>
-            </div>
-          </div>
-
+          {/* Upload CV (Optional) */}
           <div className="flex items-center gap-4">
-            <input
-              type="file"
-              accept=".pdf,.doc,.docx"
-              onChange={handleFileChange}
-              className="border p-2 rounded"
-            />
-            <span className="text-gray-600">{file ? file.name : "No file chosen"}</span>
+            <label className="bg-blue-600 text-white px-4 py-2 rounded cursor-pointer hover:bg-blue-700">
+              Upload CV
+              <input
+                type="file"
+                accept=".pdf,.doc,.docx"
+                onChange={handleFileChange}
+                className="hidden"
+              />
+            </label>
+            <span className="text-gray-600">
+              {file ? file.name : "Optional"}
+            </span>
           </div>
 
           <select
@@ -370,7 +275,7 @@ export default function ApplyPage() {
             required
             className="border p-3 rounded"
           >
-            <option value="">Select Education Level</option>
+            <option value="">Select Education Level *</option>
             {educationLevels.map((lvl) => (
               <option key={lvl} value={lvl}>
                 {lvl}
@@ -378,14 +283,13 @@ export default function ApplyPage() {
             ))}
           </select>
 
-          {/* Emergency Contact Inputs */}
           <div className="flex flex-col sm:flex-row gap-4">
             <input
               type="text"
               name="emergencyName"
               value={form.emergencyName}
               onChange={handleChange}
-              placeholder="Emergency Contact Name"
+              placeholder="Emergency Contact Name *"
               required
               className="border p-3 rounded flex-1"
             />
@@ -394,7 +298,7 @@ export default function ApplyPage() {
               name="emergencyRelationship"
               value={form.emergencyRelationship}
               onChange={handleChange}
-              placeholder="Relationship"
+              placeholder="Relationship *"
               required
               className="border p-3 rounded flex-1"
             />
@@ -406,7 +310,7 @@ export default function ApplyPage() {
               name="emergencyPhone"
               value={form.emergencyPhone}
               onChange={handleChange}
-              placeholder="Emergency Contact Phone"
+              placeholder="Emergency Contact Phone *"
               required
               className="border p-3 rounded flex-1"
             />
@@ -415,7 +319,7 @@ export default function ApplyPage() {
               name="emergencyEmail"
               value={form.emergencyEmail}
               onChange={handleChange}
-              placeholder="Emergency Contact Email"
+              placeholder="Emergency Contact Email *"
               required
               className="border p-3 rounded flex-1"
             />
@@ -438,7 +342,7 @@ export default function ApplyPage() {
               required
               className="accent-blue-600 mt-1"
             />
-            I verify that the above information is accurate. (By clicking this checkbox, the applicant acknowledges the stipulations and conditions of admission to the School and attests to the accuracy of the information provided. Please sign and date below).
+            I verify that the above information is accurate. <span className="text-red-600">*</span>
           </label>
 
           <input
@@ -459,8 +363,7 @@ export default function ApplyPage() {
               required
               className="accent-blue-600 mt-1"
             />
-            I verify that the above information is accurate. I agree to the privacy policy.
-            By submitting this form, I agree to receive messages from or on behalf of Glitec Advanced School of Technology and its affiliates as listed in the Privacy Policy regarding furthering my education. I understand that messages may be sent using automated technology. You may opt out at any time. Please view Privacy Policy or Contact Us for more details.
+            I agree to the privacy policy and receive communications. <span className="text-red-600">*</span>
           </label>
 
           <button
@@ -472,7 +375,8 @@ export default function ApplyPage() {
           </button>
         </form>
       </section>
-<WhatsAppFloating />
+
+      <WhatsAppFloating />
       <Footer />
     </>
   );

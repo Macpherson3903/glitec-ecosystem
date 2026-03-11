@@ -31,11 +31,11 @@ export default function Footer() {
           <Image src={Logo} alt="Glitec Logo" width={150} height={50} />
 
           <p className="flex items-center justify-center md:justify-start gap-2">
-            <FaPhone /> +234-816-737-5717
+            <FaPhone /> +234 707 811 6598
           </p>
 
           <p className="flex items-center justify-center md:justify-start gap-2">
-            <FaEnvelope /> admissions@glitecast.com
+            <FaEnvelope /> admission@glitecast.com
           </p>
 
           <p className="flex items-center justify-center md:justify-start gap-2 max-w-sm">

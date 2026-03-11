@@ -9,7 +9,7 @@ export default function Mission() {
         <div className="w-full md:w-1/2">
           <div className="relative w-full h-[320px] md:h-[420px] rounded-2xl overflow-hidden shadow-md group">
             <Image
-              src="/assets/groupPic.jpeg"
+              src="/assets/mission.jpeg"
               alt="Group picture of Glitec students and staff"
               fill
               priority

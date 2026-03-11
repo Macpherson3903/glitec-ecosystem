@@ -70,18 +70,18 @@ export default function Requirements() {
                 <p>
                     <strong>Call:</strong>{" "}
                     <a
-                        href="tel:+2348167375717"
+                        href="tel:+2347078116598"
                         className="text-blue-600 hover:underline"
                     >
-                        +234 816 737 5717
+                       +234 707 811 6598
                     </a>
                     <br />
                     <strong>Email:</strong>{" "}
                     <a
-                        href="mailto:admissions@glitecast.com"
+                        href="mailto:admission@glitecast.com"
                         className="text-blue-600 hover:underline"
                     >
-                        admissions@glitecast.com
+                        admission@glitecast.com
                     </a>
                 </p>
             </motion.div>
