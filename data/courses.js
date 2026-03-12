@@ -183,7 +183,7 @@ export const courses = [
       },
       {
 id: "boot-camp",
-title: "Master Basic Computer Skills/Intro to Web Design and Coding",
+title: "Boot Camp - Master Basic Computer Skills/Intro to Web Design and Coding - Part (one)",
 description: "This course introduces learners to essential computer skills and the fundamentals of web design and coding. Students will gain hands-on experience with basic computer operations, internet and email usage, and the foundational elements of building websites using HTML and CSS. Perfect for beginners looking to develop practical digital skills for personal or professional use.",
 syllabus: [
   "Computer Fundamentals",

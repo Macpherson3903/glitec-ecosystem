@@ -37,7 +37,7 @@ export default function ApplyPage() {
   const [file, setFile] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
-  const startMonths = ["January", "May", "September"];
+  const startMonths = ["January", "May","June", "September"];
   const educationLevels = [
     "High School",
     "Diploma",

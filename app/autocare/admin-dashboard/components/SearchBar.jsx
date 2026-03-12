@@ -1,17 +1,25 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Search, SlidersHorizontal, X } from "lucide-react"
+import { Search, X } from "lucide-react"
+import { autocareServices } from "@/data/autocareServices"
 
 export default function SearchBar({
-  onSearchChange = () => {},
-  onStatusChange = () => {},
+  onSearchChange = () => { },
+  onStatusChange = () => { },
+  onDateChange = () => { },
+  onCategoryChange = () => { },
 }) {
   const [search, setSearch] = useState("")
   const [status, setStatus] = useState("all")
-  const [showFilters, setShowFilters] = useState(false)
 
-  // Debounced search
+  const [dateFilter, setDateFilter] = useState("")
+  const [monthFilter, setMonthFilter] = useState("")
+  const [yearFilter, setYearFilter] = useState("")
+  const [category, setCategory] = useState("all")
+
+  const serviceTitles = autocareServices.map(service => service.title)
+
   useEffect(() => {
     const timer = setTimeout(() => {
       onSearchChange(search)
@@ -24,19 +32,38 @@ export default function SearchBar({
     onStatusChange(value)
   }
 
+  function handleDateChange(value) {
+    setDateFilter(value)
+    onDateChange({ day: value, month: monthFilter, year: yearFilter })
+  }
+
+  function handleMonthChange(value) {
+    setMonthFilter(value)
+    onDateChange({ day: dateFilter, month: value, year: yearFilter })
+  }
+
+  function handleYearChange(value) {
+    setYearFilter(value)
+    onDateChange({ day: dateFilter, month: monthFilter, year: value })
+  }
+
+  function handleCategoryChange(value) {
+    setCategory(value)
+    onCategoryChange(value)
+  }
+
   return (
     <div className="mt-8 w-full flex justify-center px-4">
-      <div className="w-full max-w-7xl flex flex-col md:flex-row items-center gap-4 bg-white p-6 rounded-xl shadow-lg">
+      <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center gap-4 bg-white p-6 rounded-xl shadow-lg flex-wrap">
 
-        {/* Search Input */}
-        <div className="relative w-full md:w-2/3">
-          <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
+        <div className="relative w-full lg:w-72">
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
           <input
             type="text"
-            placeholder="Search bookings, customers, vehicles..."
+            placeholder="Search bookings..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full py-4 px-12 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="w-full py-3 pl-10 pr-10 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           {search && (
             <button
@@ -48,28 +75,64 @@ export default function SearchBar({
           )}
         </div>
 
-        {/* Filter Button */}
-        <div className="flex items-center gap-3">
-          <button
-            onClick={() => setShowFilters((prev) => !prev)}
-            className="flex items-center gap-2 px-4 py-2.5 border rounded-lg text-sm bg-gray-50 hover:bg-gray-100"
-          >
-            <SlidersHorizontal size={16} />
-            Filters
-          </button>
+        <select
+          value={status}
+          onChange={(e) => handleStatusChange(e.target.value)}
+          className="px-4 py-3 border rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="all">All Bookings</option>
+          <option value="complete">Completed</option>
+          <option value="incomplete">Incomplete</option>
+        </select>
 
-          {showFilters && (
-            <select
-              value={status}
-              onChange={(e) => handleStatusChange(e.target.value)}
-              className="px-4 py-2.5 border rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
-              <option value="all">All Bookings</option>
-              <option value="complete">Completed</option>
-              <option value="incomplete">Incomplete</option>
-            </select>
-          )}
-        </div>
+        <input
+          type="date"
+          value={dateFilter}
+          onChange={(e) => handleDateChange(e.target.value)}
+          className="px-4 py-3 border rounded-lg text-sm"
+        />
+
+        <select
+          value={monthFilter}
+          onChange={(e) => handleMonthChange(e.target.value)}
+          className="px-4 py-3 border rounded-lg text-sm"
+        >
+          <option value="">Month</option>
+          <option value="01">Jan</option>
+          <option value="02">Feb</option>
+          <option value="03">Mar</option>
+          <option value="04">Apr</option>
+          <option value="05">May</option>
+          <option value="06">Jun</option>
+          <option value="07">Jul</option>
+          <option value="08">Aug</option>
+          <option value="09">Sep</option>
+          <option value="10">Oct</option>
+          <option value="11">Nov</option>
+          <option value="12">Dec</option>
+        </select>
+
+        <input
+          type="number"
+          placeholder="Year"
+          value={yearFilter}
+          onChange={(e) => handleYearChange(e.target.value)}
+          className="px-4 py-3 border rounded-lg text-sm w-24"
+        />
+
+        <select
+          value={category}
+          onChange={(e) => handleCategoryChange(e.target.value)}
+          className="px-4 py-3 border rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="all">All Services</option>
+          {serviceTitles.map((title, index) => (
+            <option key={index} value={title}>
+              {title}
+            </option>
+          ))}
+        </select>
+
       </div>
     </div>
   )

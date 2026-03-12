@@ -31,7 +31,7 @@ export default function CallToAction() {
             Apply Online
           </Link>
           <Link
-            href="/instructor"
+            href="/instructors"
             className="w-full md:w-auto text-center bg-blue-900 text-white font-semibold px-8 py-4 rounded-xl shadow-md hover:bg-blue-800 transition duration-300"
           >
             Become an Instructor

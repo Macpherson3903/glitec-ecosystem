@@ -38,21 +38,26 @@ export default function ApplyDetails() {
 
                 <ul className="space-y-4">
                     <li>
-                        <p className="font-semibold">Winter 2026 (January – April)</p>
-                        <p>Start Date: January 12, 2026</p>
-                        <p>Enrollment Deadline: December 30, 2025</p>
+                        <p className="font-semibold">Winter (January – April)</p>
+                        <p>Start Date: January 12</p>
+                        <p>Enrollment Deadline: December 30</p>
                     </li>
 
                     <li>
-                        <p className="font-semibold">Spring 2026 (May – August)</p>
-                        <p>Start Date: May 11, 2026</p>
-                        <p>Enrollment Deadline: April 30, 2026</p>
+                        <p className="font-semibold">Spring (May – August)</p>
+                        <p>Start Date: May 11</p>
+                        <p>Enrollment Deadline: April 30</p>
                     </li>
 
                     <li>
-                        <p className="font-semibold">Fall 2026 (September – December)</p>
-                        <p>Start Date: September 7, 2026</p>
-                        <p>Enrollment Deadline: August 31, 2026</p>
+                        <p className="font-semibold">Fall (September – December)</p>
+                        <p>Start Date: September 7</p>
+                        <p>Enrollment Deadline: August 31</p>
+                    </li>
+                    <li>
+                        <p className="font-semibold">Boot Camp - 7 Weeks(June - August)</p>
+                        <p>Start Date: June 2</p>
+                        <p>Enrollment Deadline: May 30</p>
                     </li>
                 </ul>
             </div>

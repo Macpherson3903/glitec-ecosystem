@@ -27,8 +27,7 @@ export default function Hero() {
                     </h1>
 
                     <p className="mt-4 text-lg text-gray-200">
-                        Learn practical automotive skills from experienced instructors and
-                        start building a real career in auto care and diagnostics.
+                        Learn practical skills from experienced instructors and start building real career.
                     </p>
 
                     {/* CTA Buttons */}

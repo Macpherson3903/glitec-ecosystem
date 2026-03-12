@@ -28,9 +28,60 @@ export default function BookForm() {
         loadSlots()
     }, [date])
 
+    function handlePrint() {
+        const form = document.querySelector("form")
+        const formData = new FormData(form)
+
+        const content = `
+            <html>
+            <head>
+                <title>AutoCare Booking Details</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        padding: 40px;
+                        color: black;
+                    }
+                    h2 {
+                        margin-bottom: 20px;
+                    }
+                    .row {
+                        margin-bottom: 10px;
+                    }
+                    strong {
+                        display: inline-block;
+                        width: 160px;
+                    }
+                </style>
+            </head>
+            <body>
+                <h2>AutoCare Booking Details</h2>
+
+                <div class="row"><strong>Full Name:</strong> ${formData.get("name") || ""}</div>
+                <div class="row"><strong>Phone:</strong> ${formData.get("phone") || ""}</div>
+                <div class="row"><strong>Email:</strong> ${formData.get("email") || ""}</div>
+                <div class="row"><strong>Service:</strong> ${formData.get("service") || ""}</div>
+                <div class="row"><strong>Vehicle Brand:</strong> ${formData.get("vehicleBrand") || ""}</div>
+                <div class="row"><strong>Vehicle Model:</strong> ${formData.get("vehicleModel") || ""}</div>
+                <div class="row"><strong>Date:</strong> ${formData.get("date") || ""}</div>
+                <div class="row"><strong>Time:</strong> ${formData.get("time") || ""}</div>
+                <div class="row"><strong>Notes:</strong> ${formData.get("notes") || ""}</div>
+            </body>
+            </html>
+        `
+
+        const printWindow = window.open("", "", "width=800,height=600")
+        printWindow.document.write(content)
+        printWindow.document.close()
+        printWindow.focus()
+        printWindow.print()
+        printWindow.close()
+    }
+
     async function handleSubmit(e) {
         e.preventDefault()
         setLoading(true)
+
         const formData = new FormData(e.target)
         const data = {
             name: formData.get("name"),
@@ -196,13 +247,24 @@ export default function BookForm() {
                         />
                     </div>
 
-                    <button
-                        disabled={loading}
-                        type="submit"
-                        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition"
-                    >
-                        {loading ? "Submitting..." : "Book Service"}
-                    </button>
+                    <div className="flex gap-4">
+                        <button
+                            disabled={loading}
+                            type="submit"
+                            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition"
+                        >
+                            {loading ? "Submitting..." : "Book Service"}
+                        </button>
+
+                        <button
+                            type="button"
+                            onClick={handlePrint}
+                            className="w-full bg-slate-800 hover:bg-slate-900 text-black font-semibold py-3 rounded-lg transition"
+                        >
+                            Print Details
+                        </button>
+                    </div>
+                    <p className="text-gray-400">Note: Print before pressing submit, To print order details.</p>
                 </motion.form>
             </div>
         </section>
