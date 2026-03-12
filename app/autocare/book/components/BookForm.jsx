@@ -259,7 +259,7 @@ export default function BookForm() {
                         <button
                             type="button"
                             onClick={handlePrint}
-                            className="w-full bg-slate-800 hover:bg-slate-900 text-black font-semibold py-3 rounded-lg transition"
+                            className="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold font-semibold py-3 rounded-lg transition"
                         >
                             Print Details
                         </button>
