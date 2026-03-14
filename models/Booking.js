@@ -8,6 +8,7 @@ const BookingSchema = new mongoose.Schema(
     service: { type: String, required: true },
     vehicleBrand: { type: String, required: true },
     vehicleModel: { type: String, required: true },
+    vehicleYear: { type: String },
     date: { type: String, required: true },
     time: { type: String, required: true },
     notes: { type: String },

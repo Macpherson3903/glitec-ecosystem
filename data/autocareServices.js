@@ -217,4 +217,24 @@ export const autocareServices = [
       "A properly functioning A/C keeps you comfortable and helps prevent system damage.",
     frequency: "Recommended once a year, especially before summer.",
   },
-];{}
+  {
+    id: "engine-repair-and-replacement",
+    title: "Engine Repair and Replacement",
+    slug: "engine-repair-and-replacement",
+    description:
+      "Keep your vehicle running smoothly with professional engine repair and replacement services from Glitec Autocare.",
+    signs: [
+    "Strange noises like knocking or ticking",
+"Excessive smoke from the exhaust",
+"Difficulty starting or frequent stalling",
+"Loss of power or poor fuel efficiency",
+"Dashboard warning lights, especially the check engine light",
+    ],
+    importance: [
+     "Boosts performance and fuel efficiency",
+"Prevents major mechanical failures",
+"Extends the life of your vehicle",
+ "Ensures safe and reliable driving",],
+    frequency: "Routine engine maintenance is essential. Repairs are done as issues arise, while full engine replacement is needed only for severe damage or high mileage engines. Timely attention saves you from costly breakdowns.",
+  },
+];

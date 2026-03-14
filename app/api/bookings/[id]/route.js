@@ -2,7 +2,7 @@ import Booking from "@/models/Booking";
 import connectToDB from "@/lib/mongodb";
 
 export async function PATCH(req, { params }) {
-  const { id } = await params; // ✅ unwrap the promise
+  const { id } = await params;
 
   try {
     await connectToDB();
@@ -11,7 +11,7 @@ export async function PATCH(req, { params }) {
     const updated = await Booking.findByIdAndUpdate(
       id,
       { status: body.status },
-      { new: true, returnDocument: 'after' } // ✅ fix deprecation warning
+      { new: true, returnDocument: 'after' }
     );
 
     if (!updated) {

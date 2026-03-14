@@ -49,6 +49,7 @@ Service: ${body.service}
 
 Vehicle Brand: ${body.vehicleBrand}
 Vehicle Model: ${body.vehicleModel}
+Vehicle Year: ${body.vehicleYear}
 
 Date: ${body.date}
 Time: ${body.time}

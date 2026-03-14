@@ -63,6 +63,7 @@ export default function BookForm() {
                 <div class="row"><strong>Service:</strong> ${formData.get("service") || ""}</div>
                 <div class="row"><strong>Vehicle Brand:</strong> ${formData.get("vehicleBrand") || ""}</div>
                 <div class="row"><strong>Vehicle Model:</strong> ${formData.get("vehicleModel") || ""}</div>
+                <div class="row"><strong>Vehicle Year:</strong> ${formData.get("vehicleYear") || ""}</div>
                 <div class="row"><strong>Date:</strong> ${formData.get("date") || ""}</div>
                 <div class="row"><strong>Time:</strong> ${formData.get("time") || ""}</div>
                 <div class="row"><strong>Notes:</strong> ${formData.get("notes") || ""}</div>
@@ -90,6 +91,7 @@ export default function BookForm() {
             service: formData.get("service"),
             vehicleBrand: formData.get("vehicleBrand"),
             vehicleModel: formData.get("vehicleModel"),
+            vehicleYear: formData.get("vehicleYear"),
             date: formData.get("date"),
             time: formData.get("time"),
             notes: formData.get("notes"),
@@ -202,6 +204,14 @@ export default function BookForm() {
                                 name="vehicleModel"
                                 required
                                 placeholder="Camry"
+                                className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
+                            />
+                        </div>
+                        <div>
+                            <label className="block text-sm font-medium mb-1">Vehicle Year</label>
+                            <input
+                                name="vehicleYear"
+                                placeholder="2000 (Optional)"
                                 className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
                             />
                         </div>
