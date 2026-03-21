@@ -1,37 +1,45 @@
-# 🌐 Next.js Project
+# Glitec ecosystem (monorepo)
 
-[![Next.js](https://img.shields.io/badge/Next.js-13.5-blue?logo=next.js&logoColor=white)](https://nextjs.org)  
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![Next.js](https://img.shields.io/badge/Next.js-16-blue?logo=next.js&logoColor=white)](https://nextjs.org)
 
-This project is a modern **Next.js** application bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It is designed for fast development, optimized performance, and easy deployment.  
+This repository is a **Turborepo** monorepo. The public site and APIs live in [`apps/web`](apps/web) (Next.js App Router, React 19, Tailwind CSS 4).
 
-The app uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) for automatic font optimization and integrates the **Geist** font family for a clean and professional look.
+## Prerequisites
 
----
+- Node.js 20+ (CI uses 22)
+- npm 11+
 
-## 🔹 Features
+## Install
 
-- Built with **Next.js 13+** using the `app` directory.  
-- Automatic **hot-reloading** during development.  
-- Optimized font loading with [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts).  
-- Ready for **production deployment** on Vercel.  
-- Clean and maintainable project structure.  
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-Make sure you have one of the following installed:
-
-- [Node.js](https://nodejs.org) (v18+ recommended)  
-- [npm](https://www.npmjs.com/) / [Yarn](https://yarnpkg.com/) / [pnpm](https://pnpm.io/) / [Bun](https://bun.sh/)  
-
-### Installation
-
-Clone the repository:
+From the repository root:
 
 ```bash
-git clone https://github.com/yourusername/your-project.git
-cd your-project
+npm install
+```
+
+## Scripts
+
+| Command | Description |
+|--------|-------------|
+| `npm run dev` | Start Next.js dev server for `@glitec/web` |
+| `npm run build` | Production build (all workspaces) |
+| `npm run lint` | ESLint via Turborepo |
+
+To run only the web app:
+
+```bash
+npx turbo run dev --filter=@glitec/web
+```
+
+## Environment variables
+
+- **Production:** Configure variables in the **Vercel** project (same keys you use locally). Set the project **Root Directory** to **`apps/web`** so they apply to the Next.js app.
+- **Local:** Use **`apps/web/.env.local`** only — Next.js does not load `.env*` from the repository root.
+
+## Deployment (Vercel)
+
+Set the Vercel project **Root Directory** to **`apps/web`**, or use the [Turborepo + Vercel](https://vercel.com/docs/monorepos/turborepo) integration. Add the same environment variables you use in development to the Vercel dashboard (Production / Preview as needed).
+
+## Production
+
+See [`PRODUCTION.md`](PRODUCTION.md) for hosting, security, and observability notes.
