@@ -40,6 +40,8 @@ npx turbo run dev --filter=@glitec/web
 
 Set the Vercel project **Root Directory** to **`apps/web`**, or use the [Turborepo + Vercel](https://vercel.com/docs/monorepos/turborepo) integration. Add the same environment variables you use in development to the Vercel dashboard (Production / Preview as needed).
 
+If a deploy fails with Tailwind / `@tailwindcss/oxide` native binding errors after dependency changes, trigger a **redeploy with “Clear build cache”** so Vercel does not reuse an old `node_modules` from before the Linux optional packages were added to the lockfile.
+
 ## Production
 
 See [`PRODUCTION.md`](PRODUCTION.md) for hosting, security, and observability notes.
