@@ -4,8 +4,8 @@ export const courses = [
     category: "Auto Mechanics",
     items: [
       {
-        id: "engine-performance",
-        title: "Automotive Engine Performance and Diagnosis",
+        id: "engine-performance-(2)",
+        title: "Automotive Engine Performance and Diagnosis - (Part 2)",
         description:
           "This course focuses on the skills and knowledge required to analyze, maintain, and troubleshoot automotive engine performance systems. Students will learn how fuel, ignition, air intake, emission control, and electronic management systems affect engine operation. Emphasis is placed on engine performance diagnostics, use of specialized tools and equipment, electronic control systems, and emission compliance. Through a combination of classroom theory and hands-on shop practice, students develop the ability to efficiently identify and repair engine performance problems to ensure vehicles run smoothly and efficiently.",
         syllabus: [
@@ -20,8 +20,8 @@ export const courses = [
         ],
       },
       {
-        id: "automotive-electrical-system",
-        title: "Automotive Electrical System",
+        id: "automotive-electrical-system-(3)",
+        title: "Automotive Electrical System - (Part 3)",
         description:
           "This course provides students with a comprehensive understanding of how electrical and electronic systems operate in modern vehicles. Students learn to diagnose, repair, and maintain automotive electrical components from basic circuits to complex electronic control modules. The course combines theory, practical hands-on training, and troubleshooting techniques in both traditional 12-volt systems and newer technologies found in hybrid vehicles.",
         syllabus: [
@@ -37,8 +37,8 @@ export const courses = [
         ],
       },
       {
-        id: "transmission-brakes-suspension-steering",
-        title: "Automotive Transmission, Brakes, Suspension and Steering Systems",
+        id: "transmission-brakes-suspension-steering-(1)",
+        title: "Automotive Transmission, Brakes, Suspension and Steering Systems - (Part 1)",
         description:
           "This course provides comprehensive knowledge and hands-on experience in the critical systems that control a vehicle’s movement, stability, and safety. Students learn how transmissions transfer engine power, how brakes provide stopping power, and how suspension and steering systems affect ride comfort and handling. The course blends theory, practical diagnostics, repair techniques, and service procedures to prepare students for real-world automotive repair and maintenance..",
         syllabus: [
@@ -49,8 +49,8 @@ export const courses = [
         ],
       },
       {
-        id: "heating-air-conditioning",
-        title: "Automotive Heating and Air Conditioning",
+        id: "heating-air-conditioning-(4)",
+        title: "Automotive Heating and Air Conditioning - (Part 4)",
         description:
           "This course provides students with the knowledge and hands-on skills needed to diagnose, repair, and service automotive heating, ventilation, and air conditioning (HVAC) systems. Emphasis is placed on understanding the theory of heat transfer, refrigeration cycles, HVAC system components, and modern climate control technologies. Students learn industry-standard procedures for system diagnostics, refrigerant handling, leak detection, and system recharging, preparing them for work on both conventional and hybrid vehicle HVAC systems.",
         syllabus: [
