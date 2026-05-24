@@ -237,6 +237,28 @@ export const autocareServices = [
       "Ensures safe and reliable driving",],
     frequency: "Routine engine maintenance is essential. Repairs are done as issues arise, while full engine replacement is needed only for severe damage or high mileage engines. Timely attention saves you from costly breakdowns.",
   },
+  {
+    id: "transmission-repair-and-replacement",
+    title: "Transmission Repair and Replacement",
+    slug: "transmission-repair-and-replacement",
+    description:
+      "Ensure smooth gear shifting and reliable vehicle performance with professional transmission repair and replacement services from Glitec Autocare.",
+    signs: [
+      "Difficulty shifting gears or delayed gear engagement",
+      "Grinding, whining, or clunking noises while driving",
+      "Transmission fluid leaks under the vehicle",
+      "Burning smell coming from the engine area",
+      "Vehicle slipping out of gear or losing acceleration power",
+    ],
+    importance: [
+      "Improves driving performance and smooth gear operation",
+      "Prevents complete transmission failure",
+      "Enhances fuel efficiency and vehicle reliability",
+      "Extends the lifespan of your vehicle’s drivetrain",
+    ],
+    frequency:
+      "Regular transmission servicing is recommended based on your vehicle manufacturer’s schedule. Repairs should be addressed immediately when warning signs appear, while full transmission replacement is necessary for severely damaged or worn-out systems. Early maintenance helps avoid expensive repairs and unexpected breakdowns.",
+  },
 ];
 
 /** Resolve a service from URL query (?service=slug) or id */
