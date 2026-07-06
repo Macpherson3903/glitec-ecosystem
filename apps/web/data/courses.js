@@ -68,9 +68,9 @@ export const courses = [
     category: "Electrical and Electronics Technology",
     items: [
       {
-        id: "home-industrial-wiring",
-        title: "Home and Industrial Wiring",
-        description: "This course focuses on the installation and maintenance of electrical systems that provide power to residential and commercial buildings.\n\nHome wiring involves setting up electrical circuits that supply power to lighting, outlets, appliances, and heating/cooling systems. Students are trained in electrical codes and standards to ensure safety and efficiency. Common tasks include running wires through walls, installing circuit breakers, outlets, and switches, and connecting electrical panels to the power grid.\n\nIndustrial wiring focuses on larger, more complex electrical systems used in factories, warehouses, and manufacturing plants. This includes setting up power distribution systems, machinery wiring, control panels, and motors.",
+        id: "electrical-installation-and-wiring",
+        title: "Electrical Installation and Wiring",
+        description: "This course focuses on the installation and maintenance of electrical systems that provide power to residential and commercial buildings.\n\nHome wiring involves setting up electrical circuits that supply power to lighting, outlets, appliances, and heating/cooling systems. Students are trained in electrical codes and standards to ensure safety and efficiency. Common tasks include running wires through walls, installing circuit breakers, outlets, and switches, and connecting electrical panels to the power grid.",
         syllabus: [
           "Basic Electrical Principles",
           "Electrical Codes and Safety Standards",
