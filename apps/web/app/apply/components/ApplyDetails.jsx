@@ -68,9 +68,13 @@ export default function ApplyDetails() {
                     </li>
 
                     <li>
-                        <p className="font-semibold">Boot Camp - 7 Weeks(June - August)</p>
+                        <p className="font-semibold">Boot Camp - Batch A: June - July</p>
                         {/* <p>Start Date: June 2</p>
                         <p>Enrollment Deadline: May 30</p> */}
+                    </li>
+
+                    <li>
+                        <p className="font-semibold">Boot Camp - Batch B: July - August</p>
                     </li>
                 </ul>
             </div>
