@@ -37,7 +37,7 @@ export default function ApplyPage() {
   const [file, setFile] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
-  const startMonths = ["January", "May","June", "September"];
+  const startMonths = ["January","March","May","June","July", "September","November"];
   const educationLevels = [
     "High School",
     "Diploma",
@@ -120,7 +120,7 @@ export default function ApplyPage() {
       <Header />
       <Toaster position="fixed top-right" />
 <ApplyDetails />
-      <section className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-bold mb-6">Apply for Admission</h1>
 
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>

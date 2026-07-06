@@ -1,6 +1,6 @@
 export default function ApplyDetails() {
     return (
-        <section className="max-w-4xl mx-auto bg-gray-50 p-6 sm:p-8 rounded-lg text-gray-800 space-y-6">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-gray-50 p-6 sm:p-8 rounded-lg text-gray-800 space-y-6">
             <div>
                 <h1 className="text-3xl font-bold mb-3">Apply for Admission</h1>
                 <p>
@@ -38,26 +38,39 @@ export default function ApplyDetails() {
 
                 <ul className="space-y-4">
                     <li>
-                        <p className="font-semibold">Winter (January – April)</p>
-                        <p>Start Date: January 12</p>
-                        <p>Enrollment Deadline: December 30</p>
+                        <p className="font-semibold">Batch A: January - February</p>
+                        {/* <p>Start Date: January 12</p>
+                        <p>Enrollment Deadline: December 30</p> */}
                     </li>
 
                     <li>
-                        <p className="font-semibold">Spring (May – August)</p>
-                        <p>Start Date: May 11</p>
-                        <p>Enrollment Deadline: April 30</p>
+                        <p className="font-semibold">Batch B: March - April</p>
+                        {/* <p>Start Date: May 11</p>
+                        <p>Enrollment Deadline: April 30</p> */}
                     </li>
 
                     <li>
-                        <p className="font-semibold">Fall (September – December)</p>
-                        <p>Start Date: September 7</p>
-                        <p>Enrollment Deadline: August 31</p>
+                        <p className="font-semibold">Batch C: May - June</p>
+                        {/* <p>Start Date: September 7</p>
+                        <p>Enrollment Deadline: August 31</p> */}
                     </li>
+
+                    <li>
+                        <p className="font-semibold">Batch D: July - August</p>
+                    </li>
+
+                    <li>
+                        <p className="font-semibold">Batch E: September - October</p>
+                    </li>
+
+                    <li>
+                        <p className="font-semibold">Batch D: November - December</p>
+                    </li>
+
                     <li>
                         <p className="font-semibold">Boot Camp - 7 Weeks(June - August)</p>
-                        <p>Start Date: June 2</p>
-                        <p>Enrollment Deadline: May 30</p>
+                        {/* <p>Start Date: June 2</p>
+                        <p>Enrollment Deadline: May 30</p> */}
                     </li>
                 </ul>
             </div>

@@ -3,7 +3,7 @@ import Image from "next/image"
 export default function Empower() {
     return (
         <section className="w-full py-16 px-6 flex justify-center">
-            <div className="max-w-6xl w-full flex flex-col items-center text-center gap-10">
+            <div className="max-w-7xl w-full flex flex-col items-center text-center gap-10">
 
                 <div className="max-w-3xl">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">

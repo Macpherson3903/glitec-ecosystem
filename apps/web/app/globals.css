@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+@layer utilities {
+  .max-w-7xl {
+    max-width: 1480px;
+  }
+}

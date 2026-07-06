@@ -33,7 +33,7 @@ export default async function JobDetailPage({ params }) {
   return (
     <>
       <Header />
-      <article className="max-w-4xl mx-auto px-6 py-12 md:py-16">
+      <article className="max-w-7xl mx-auto px-6 py-12 md:py-16">
         <Link
           href="/jobs"
           className="text-blue-600 hover:underline mb-6 inline-block text-sm font-medium"

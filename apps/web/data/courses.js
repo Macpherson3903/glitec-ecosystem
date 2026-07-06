@@ -3,22 +3,22 @@ export const courses = [
   {
     category: "Auto Mechanics",
     items: [
-      {
-        id: "engine-performance-(2)",
-        title: "Automotive Engine Performance and Diagnosis - (Part 2)",
-        description:
-          "This course focuses on the skills and knowledge required to analyze, maintain, and troubleshoot automotive engine performance systems. Students will learn how fuel, ignition, air intake, emission control, and electronic management systems affect engine operation. Emphasis is placed on engine performance diagnostics, use of specialized tools and equipment, electronic control systems, and emission compliance. Through a combination of classroom theory and hands-on shop practice, students develop the ability to efficiently identify and repair engine performance problems to ensure vehicles run smoothly and efficiently.",
-        syllabus: [
-          "Basic engine operation and internal combustion theory",
-          "Factors affecting engine performance: air, fuel, compression, spark, and timing",
-          "Fuel and Air Delivery Systems",
-          "Ignition Systems",
-          "Engine Management and Sensors",
-          "Emissions Control Systems",
-          "Diagnostic Tools and Techniques",
-          "Performance Testing",
-        ],
-      },
+      // {
+      //   id: "engine-performance-(2)",
+      //   title: "Automotive Engine Performance and Diagnosis - (Part 2)",
+      //   description:
+      //     "This course focuses on the skills and knowledge required to analyze, maintain, and troubleshoot automotive engine performance systems. Students will learn how fuel, ignition, air intake, emission control, and electronic management systems affect engine operation. Emphasis is placed on engine performance diagnostics, use of specialized tools and equipment, electronic control systems, and emission compliance. Through a combination of classroom theory and hands-on shop practice, students develop the ability to efficiently identify and repair engine performance problems to ensure vehicles run smoothly and efficiently.",
+      //   syllabus: [
+      //     "Basic engine operation and internal combustion theory",
+      //     "Factors affecting engine performance: air, fuel, compression, spark, and timing",
+      //     "Fuel and Air Delivery Systems",
+      //     "Ignition Systems",
+      //     "Engine Management and Sensors",
+      //     "Emissions Control Systems",
+      //     "Diagnostic Tools and Techniques",
+      //     "Performance Testing",
+      //   ],
+      // },
       {
         id: "automotive-electrical-system-(3)",
         title: "Automotive Electrical System - (Part 3)",
@@ -95,19 +95,19 @@ export const courses = [
           "Hands-on installation and maintenance techniques",
         ],
       },
-      {
-        id: "robotics-automation",
-        title: "Fundamentals of Robotics and Automation",
-        description:
-          "Fundamentals of Robotics and Automation as a course introduces students to the basic principles, technologies, and applications involved in designing, building, and controlling robotic systems and automated machines. The course covers topics such as mechanical structures, electronic systems, sensors, actuators, programming, and control systems. Students learn how robots perceive their environment, make decisions, and perform tasks automatically, often using tools like microcontrollers (e.g., Arduino) and basic programming languages. The course also explores automation in industries, covering topics like conveyor systems, robotic arms, and smart manufacturing. Emphasis is placed on problem-solving, system integration, and hands-on projects that teach the practical skills needed for careers in robotics, manufacturing, engineering, and emerging technologies",
-        syllabus: [
-          "Understanding Robotics Concepts",
-          "Electrical and Electronics Basics",
-          "Programming and Simulation",
-          "Mechatronics & Control Systems",
-          "Sensors and Actuators",
-        ],
-      },
+      // {
+      //   id: "robotics-automation",
+      //   title: "Fundamentals of Robotics and Automation",
+      //   description:
+      //     "Fundamentals of Robotics and Automation as a course introduces students to the basic principles, technologies, and applications involved in designing, building, and controlling robotic systems and automated machines. The course covers topics such as mechanical structures, electronic systems, sensors, actuators, programming, and control systems. Students learn how robots perceive their environment, make decisions, and perform tasks automatically, often using tools like microcontrollers (e.g., Arduino) and basic programming languages. The course also explores automation in industries, covering topics like conveyor systems, robotic arms, and smart manufacturing. Emphasis is placed on problem-solving, system integration, and hands-on projects that teach the practical skills needed for careers in robotics, manufacturing, engineering, and emerging technologies",
+      //   syllabus: [
+      //     "Understanding Robotics Concepts",
+      //     "Electrical and Electronics Basics",
+      //     "Programming and Simulation",
+      //     "Mechatronics & Control Systems",
+      //     "Sensors and Actuators",
+      //   ],
+      // },
     ],
   },
   {
@@ -148,20 +148,20 @@ export const courses = [
 "Portfolio development with real-world web projects",
         ],
       },
-      {
-        id: "database-management",
-        title: "Database Management",
-        description:
-          "The Database Management Training Program is a practical, career-focused program designed to equip students with the skills required to design, manage, secure, and analyze data in modern organizations. In today’s digital economy, data is one of the most valuable assets. This program prepares students to work confidently with databases that power websites, applications, businesses, hospitals, financial institutions, and government systems. The training is suitable for beginners, IT professionals seeking upskilling, and individuals transitioning into data-driven careers.",
-        syllabus: [
-         "Data types and structures",
-"SQL queries",
-"MySQL and PostgreSQL",
-"Data backup, recovery, and maintenance",
-"Access permission",
-"Basic Data Analysis",
-        ],
-      },
+//       {
+//         id: "database-management",
+//         title: "Database Management",
+//         description:
+//           "The Database Management Training Program is a practical, career-focused program designed to equip students with the skills required to design, manage, secure, and analyze data in modern organizations. In today’s digital economy, data is one of the most valuable assets. This program prepares students to work confidently with databases that power websites, applications, businesses, hospitals, financial institutions, and government systems. The training is suitable for beginners, IT professionals seeking upskilling, and individuals transitioning into data-driven careers.",
+//         syllabus: [
+//          "Data types and structures",
+// "SQL queries",
+// "MySQL and PostgreSQL",
+// "Data backup, recovery, and maintenance",
+// "Access permission",
+// "Basic Data Analysis",
+//         ],
+//       },
       {
         id: "basic-and-advancedd-computer-training",
         title: "Basic and Advanced Computer Training",
@@ -195,54 +195,54 @@ syllabus: [
       },
     ],
   },
-  {
-    category: "Business Management",
-    items: [
-      {
-        id: "entrepreneurship",
-        title: "Entrepreneurship - Start Your Own Business",
-        description:
-          "This course teaches students the skills, knowledge, and mindset needed to start, manage, and grow a business. The course covers key topics such as identifying business opportunities, developing business plans, securing funding, marketing products or services, and managing daily operations. Students learn about innovation, risk management, leadership, financial planning, and customer relations. Entrepreneurship courses often include real-world case studies, team projects, and opportunities to create and pitch business ideas. The goal is to prepare students to think creatively, solve problems, and successfully launch or manage their own ventures in various industries.",
-        syllabus: [
-          "Business Idea Development",
-"Business Planning",
-"Marketing and Sales",
-"Financial Management",
-"Legal and Ethical Issues",
-"Leadership and Team Management",
-"Risk Management and Problem Solving",
-        ],
-      },
-      {
-        id: "digital-marketing",
-        title: "Digital and Social Media Marketing",
-        description:
-          "Develop strategies to market products and services online using social media and digital channels.",
-        syllabus: [
-          "Social Media Marketing Strategies",
-          "SEO and SEM basics",
-          "Content creation and management",
-          "Email marketing campaigns",
-          "Analytics and performance tracking",
-        ],
-      },
-      {
-        id: "project-management",
-        title: "Project Management",
-        description:
-          "The Project Management Course is designed to equip individuals with the knowledge, tools, and practical skills required to successfully initiate, plan, execute, monitor, and close projects in diverse industries. This course aligns with global best practices and professional standards, preparing participants to manage projects efficiently, delivering results within scope, time, and budget, and leading high-performing teams. It is ideal for aspiring project managers, team leads, business owners, and professionals seeking to strengthen their project leadership capabilities.",
-        syllabus: [
-        " Project lifecycle and project management frameworks",
-"Project initiation, scope definition, and stakeholder management",
-"Work Breakdown Structure (WBS) and project scheduling techniques",
-"Budgeting, cost estimation, and resource allocation",
-"Risk identification, assessment, and mitigation strategies",
-"Quality management and performance monitoring",
-"Effective communication and leadership in project teams",
-"Use of project management tools and software",
-"Project documentation and reporting standards",
-        ],
-      },
-    ],
-  },
+  // {
+  //   category: "Business Management",
+  //   items: [
+//       {
+//         id: "entrepreneurship",
+//         title: "Entrepreneurship - Start Your Own Business",
+//         description:
+//           "This course teaches students the skills, knowledge, and mindset needed to start, manage, and grow a business. The course covers key topics such as identifying business opportunities, developing business plans, securing funding, marketing products or services, and managing daily operations. Students learn about innovation, risk management, leadership, financial planning, and customer relations. Entrepreneurship courses often include real-world case studies, team projects, and opportunities to create and pitch business ideas. The goal is to prepare students to think creatively, solve problems, and successfully launch or manage their own ventures in various industries.",
+//         syllabus: [
+//           "Business Idea Development",
+// "Business Planning",
+// "Marketing and Sales",
+// "Financial Management",
+// "Legal and Ethical Issues",
+// "Leadership and Team Management",
+// "Risk Management and Problem Solving",
+//         ],
+//       },
+      // {
+      //   id: "digital-marketing",
+      //   title: "Digital and Social Media Marketing",
+      //   description:
+      //     "Develop strategies to market products and services online using social media and digital channels.",
+      //   syllabus: [
+      //     "Social Media Marketing Strategies",
+      //     "SEO and SEM basics",
+      //     "Content creation and management",
+      //     "Email marketing campaigns",
+      //     "Analytics and performance tracking",
+      //   ],
+      // },
+//       {
+//         id: "project-management",
+//         title: "Project Management",
+//         description:
+//           "The Project Management Course is designed to equip individuals with the knowledge, tools, and practical skills required to successfully initiate, plan, execute, monitor, and close projects in diverse industries. This course aligns with global best practices and professional standards, preparing participants to manage projects efficiently, delivering results within scope, time, and budget, and leading high-performing teams. It is ideal for aspiring project managers, team leads, business owners, and professionals seeking to strengthen their project leadership capabilities.",
+//         syllabus: [
+//         " Project lifecycle and project management frameworks",
+// "Project initiation, scope definition, and stakeholder management",
+// "Work Breakdown Structure (WBS) and project scheduling techniques",
+// "Budgeting, cost estimation, and resource allocation",
+// "Risk identification, assessment, and mitigation strategies",
+// "Quality management and performance monitoring",
+// "Effective communication and leadership in project teams",
+// "Use of project management tools and software",
+// "Project documentation and reporting standards",
+//         ],
+//       },
+  //   ],
+  // },
 ];

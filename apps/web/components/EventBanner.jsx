@@ -29,12 +29,12 @@ export default function EventBanner() {
     return (
         <section className="bg-gradient-to-r from-blue-600 to-orange-500 text-white rounded-xl max-w-7xl mx-auto p-6 md:p-10 mt-8 flex flex-col md:flex-row items-center justify-between shadow-lg">
             <div className="flex-1 mb-6 md:mb-0 text-center md:text-left">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">Boot Camp 2026</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">Boot Camp!!!</h2>
                 <p className="mb-3 text-sm sm:text-base md:text-lg">
                     Register before June to get an exclusive <span className="font-semibold underline">50% discount</span>!
                 </p>
                 <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-4 text-center">
-                    <div>
+                    {/* <div>
                         <span className="block text-xl sm:text-2xl md:text-3xl font-bold">{timeLeft.days}</span>
                         <span className="text-xs sm:text-sm md:text-base">Days</span>
                     </div>
@@ -49,7 +49,7 @@ export default function EventBanner() {
                     <div>
                         <span className="block text-xl sm:text-2xl md:text-3xl font-bold">{timeLeft.seconds}</span>
                         <span className="text-xs sm:text-sm md:text-base">Seconds</span>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className="w-full md:w-auto flex justify-center md:justify-end">

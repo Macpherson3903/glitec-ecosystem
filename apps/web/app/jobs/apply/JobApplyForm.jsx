@@ -90,7 +90,7 @@ function JobApplyFormInner() {
       <Toaster position="top-right" />
 
       <main className="bg-gray-50">
-        <section className="max-w-5xl mx-auto px-6 py-12 text-center">
+        <section className="max-w-7xl mx-auto px-6 py-12 text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Job application
           </h1>
@@ -100,7 +100,7 @@ function JobApplyFormInner() {
           </p>
         </section>
 
-        <section className="max-w-4xl mx-auto px-6 pb-20">
+        <section className="max-w-7xl mx-auto px-6 pb-20">
           <div className="bg-white rounded-xl shadow-md p-8 md:p-10">
             <h2 className="text-2xl font-semibold mb-8 text-center">
               Application form

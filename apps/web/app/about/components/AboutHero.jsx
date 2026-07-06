@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function AboutHero() {
   return (
     <section className="w-full px-4 md:px-6 py-10">
-      <div className="relative max-w-[1080px] mx-auto h-[320px] md:h-[420px] lg:h-[460px] rounded-2xl overflow-hidden flex items-center justify-center text-center">
+      <div className="relative max-w-7xl mx-auto h-[320px] md:h-[420px] lg:h-[460px] rounded-2xl overflow-hidden flex items-center justify-center text-center">
 
         {/* Background Image */}
         <Image

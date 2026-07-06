@@ -38,7 +38,7 @@ export default function JobsPage() {
           </div>
         </section>
 
-        <section className="max-w-5xl mx-auto px-6 py-12 text-center">
+        <section className="max-w-7xl mx-auto px-6 py-12 text-center">
           <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">
             Open positions
           </h2>
