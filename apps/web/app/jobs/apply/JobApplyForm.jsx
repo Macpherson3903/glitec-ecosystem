@@ -6,19 +6,47 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloating from "@/components/WhatsAppFloating";
 import { toast, Toaster } from "react-hot-toast";
-import { jobs } from "@/data/jobs";
 
 function JobApplyFormInner() {
   const searchParams = useSearchParams();
   const [fileName, setFileName] = useState("");
   const [loading, setLoading] = useState(false);
   const [jobId, setJobId] = useState("");
+  const [openJobs, setOpenJobs] = useState([]);
+  const [closedRequested, setClosedRequested] = useState(false);
 
   useEffect(() => {
-    const q = searchParams.get("jobId");
-    if (q && jobs.some((j) => j.id === q)) {
-      setJobId(q);
+    let cancelled = false;
+
+    async function loadOpenJobs() {
+      try {
+        const res = await fetch("/api/jobs/status", { cache: "no-store" });
+        const data = await res.json();
+        const list = Array.isArray(data.jobs) ? data.jobs : [];
+        const available = list.filter((j) => j.status !== "closed");
+        if (!cancelled) setOpenJobs(available);
+
+        const q = searchParams.get("jobId");
+        if (!q) return;
+        const requested = list.find((j) => j.id === q);
+        if (!requested) return;
+        if (requested.status === "closed") {
+          if (!cancelled) {
+            setClosedRequested(true);
+            setJobId("");
+          }
+          return;
+        }
+        if (!cancelled) setJobId(q);
+      } catch {
+        if (!cancelled) setOpenJobs([]);
+      }
     }
+
+    loadOpenJobs();
+    return () => {
+      cancelled = true;
+    };
   }, [searchParams]);
 
   const handleFileChange = (e) => {
@@ -56,6 +84,11 @@ function JobApplyFormInner() {
 
     if (!jobId) {
       toast.error("Please select a position");
+      return;
+    }
+
+    if (!openJobs.some((j) => j.id === jobId)) {
+      toast.error("This vacancy is closed and is not accepting applications");
       return;
     }
 
@@ -118,16 +151,27 @@ function JobApplyFormInner() {
                 >
                   Position
                 </label>
+                {closedRequested && (
+                  <p className="text-sm text-amber-700 mb-2">
+                    That vacancy is closed. Choose an open position below.
+                  </p>
+                )}
+                {openJobs.length === 0 && (
+                  <p className="text-sm text-gray-600 mb-2">
+                    There are no open vacancies at the moment.
+                  </p>
+                )}
                 <select
                   id="jobId"
                   name="jobId"
                   required
                   value={jobId}
                   onChange={(e) => setJobId(e.target.value)}
-                  className="border rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 bg-white"
+                  disabled={openJobs.length === 0}
+                  className="border rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 bg-white disabled:bg-gray-100"
                 >
                   <option value="">Select a position</option>
-                  {jobs.map((j) => (
+                  {openJobs.map((j) => (
                     <option key={j.id} value={j.id}>
                       {j.title}
                     </option>
@@ -200,7 +244,7 @@ function JobApplyFormInner() {
 
               <button
                 type="submit"
-                disabled={loading}
+                disabled={loading || openJobs.length === 0}
                 className="md:col-span-2 bg-blue-700 text-white py-3 rounded-lg font-semibold hover:bg-blue-800 transition disabled:opacity-60"
               >
                 {loading ? "Submitting…" : "Submit application"}

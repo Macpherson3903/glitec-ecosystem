@@ -145,24 +145,3 @@ export const jobs = [
   },
 ];
 
-export function getJobById(id) {
-  return jobs.find((j) => j.id === id) ?? null;
-}
-
-export function searchJobs(query) {
-  const q = query.trim().toLowerCase();
-  if (!q) return jobs;
-  return jobs.filter((j) => {
-    const hay = [
-      j.title,
-      j.summary,
-      j.description,
-      ...(j.requirements || []),
-      ...(j.responsibilities || []),
-      j.department,
-    ]
-      .join(" ")
-      .toLowerCase();
-    return hay.includes(q);
-  });
-}

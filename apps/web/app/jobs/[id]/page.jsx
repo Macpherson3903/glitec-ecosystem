@@ -2,15 +2,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { getJobById, jobs } from "@/data/jobs";
+import JobStatusBadge from "@/components/JobStatusBadge";
+import { getJobById } from "@/lib/jobs";
 
-export async function generateStaticParams() {
-  return jobs.map((job) => ({ id: job.id }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }) {
-  const { id } = await params;
-  const job = getJobById(id);
+  const { id: rawId } = await params;
+  const id = decodeURIComponent(rawId);
+  const job = await getJobById(id);
   if (!job) {
     return { title: "Job not found" };
   }
@@ -25,10 +25,13 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function JobDetailPage({ params }) {
-  const { id } = await params;
-  const job = getJobById(id);
+  const { id: rawId } = await params;
+  const id = decodeURIComponent(rawId);
+  const job = await getJobById(id);
 
   if (!job) notFound();
+
+  const closed = job.status === "closed";
 
   return (
     <>
@@ -41,9 +44,12 @@ export default async function JobDetailPage({ params }) {
           ← Back to all jobs
         </Link>
 
-        <p className="text-sm font-semibold uppercase tracking-wide text-blue-600 mb-2">
-          {job.department}
-        </p>
+        <div className="flex flex-wrap items-center gap-3 mb-2">
+          <p className="text-sm font-semibold uppercase tracking-wide text-blue-600">
+            {job.department}
+          </p>
+          <JobStatusBadge status={job.status} />
+        </div>
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
           {job.title}
         </h1>
@@ -79,12 +85,18 @@ export default async function JobDetailPage({ params }) {
           </ul>
         </section>
 
-        <Link
-          href={`/jobs/apply?jobId=${encodeURIComponent(job.id)}`}
-          className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-        >
-          Apply for this role
-        </Link>
+        {closed ? (
+          <p className="inline-block bg-gray-100 text-gray-700 px-8 py-3 rounded-lg font-semibold">
+            This vacancy is closed and is not accepting applications.
+          </p>
+        ) : (
+          <Link
+            href={`/jobs/apply?jobId=${encodeURIComponent(job.id)}`}
+            className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+          >
+            Apply for this role
+          </Link>
+        )}
       </article>
       <Footer />
     </>

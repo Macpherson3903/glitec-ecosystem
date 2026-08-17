@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
 import connectToDB from "@/lib/mongodb";
 import JobApplication from "@/models/JobApplication";
-import { getJobById } from "@/data/jobs";
+import { getJobById, isJobOpen } from "@/lib/jobs";
 
 function escapeHtml(s) {
   if (typeof s !== "string") return "";
@@ -26,10 +26,17 @@ export async function POST(req) {
       typeof backgroundRaw === "string" ? backgroundRaw.trim() : "";
     const file = formData.get("cv");
 
-    const job = typeof jobId === "string" ? getJobById(jobId) : null;
+    const job = typeof jobId === "string" ? await getJobById(jobId) : null;
     if (!job) {
       return Response.json(
         { error: "Invalid or missing job role" },
+        { status: 400 }
+      );
+    }
+
+    if (!(await isJobOpen(job.id))) {
+      return Response.json(
+        { error: "This vacancy is closed and is not accepting applications" },
         { status: 400 }
       );
     }
