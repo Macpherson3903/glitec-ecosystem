@@ -143,5 +143,28 @@ export const jobs = [
     location: "Port Harcourt, Rivers State, Nigeria",
     department: "Administration",
   },
+  {
+    id: "software-developer",
+    title: "Software Developer",
+    summary: "Deliver assigned jobs, and train interns on the trending software packages.",
+    description: "As a Software Developer you will train students in web design and web development. The successful candidate will deliver practical, hands-on training that equips students with the technical skills to design, develop, and maintain modern, responsive websites.",
+    responsibilities: [
+      "Teach web design fundamentals, including HTML, CSS, JavaScript, and responsive design.",
+      "Train students in website development, hosting, domain management, and basic website maintenance.",
+      "Develop lesson plans, practical exercises, and student projects.",
+      "Guide students through real-world projects and assess their progress.",
+      "Promote problem-solving, creativity, and industry best practices.",
+      "Proficiency in HTML, CSS, JavaScript, and modern web development tools.",
+      "Practical experience designing and developing websites.",
+      "Strong communication, presentation, and teaching skills.",
+      "Ability to mentor students with varying levels of technical knowledge.",
+    ],
+    requirements: [
+      "A degree, diploma, or relevant professional certification in Software Developmnet, Computer Science, or a related field is an advantage",
+    ],
+    employmentType: "Full-time or Contract",
+    location: "Port Harcourt, Rivers State, Nigeria",
+    department: "ICT"
+  }
 ];
 
